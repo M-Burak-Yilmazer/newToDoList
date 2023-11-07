@@ -76,6 +76,12 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
 }
+span{
+    color:#A3C9D9;
+    font-weight: 900;
+    font-size: 1.3rem;
+
+}
 
 .list li {
   background-color: #e47349;
