@@ -10,9 +10,11 @@ addButton.addEventListener("click", (e) => {
       const toDos = document.createElement("li");
       toDos.innerHTML = `${input.value} <button class="btn"></button>`;
       list.appendChild(toDos);
+
       addLocal();
       input.value = "";
       input.focus();
+      getResult();
     }
   } else {
     Swal.fire({
@@ -26,10 +28,12 @@ addButton.addEventListener("click", (e) => {
 list.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
+    getResult();
     addLocal();
   } else if ((e.target.className = "btn")) {
     e.target.parentElement.remove();
     addLocal();
+    getResult();
   }
 });
 
@@ -47,3 +51,14 @@ const getValues = () => {
   list.innerHTML = localStorage.getItem("values");
 };
 getValues();
+
+function getResult() {
+  document.querySelector(".completed").textContent =
+    document.querySelectorAll(".checked").length;
+
+  console.log(
+    (document.querySelector(".total").textContent =
+      document.querySelectorAll("li").length)
+  );
+}
+getResult();
