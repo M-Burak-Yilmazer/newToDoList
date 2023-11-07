@@ -85,8 +85,8 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
   cursor:pointer;
-   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+   /* box-shadow: -3px -3px 1px rgba(228, 115, 73, 0.642),3px 3px 1px rgba(228, 115, 73, 0.642); */
+    /* 5px 5px 10px rgba(228, 115, 73, 0.25),   */
 }
 .list li button {
   content: "";
@@ -102,7 +102,13 @@ h1 {
   right: 10px;
   top: 3px;
   cursor: pointer;
+  transition:scale 1s  ease-in-out;
 }
+.list li button:hover{
+    scale:1.2;
+    cursor:pointer;
+}
+
 .list li::before {
   content: "";
   background-image: url(./images/circle_105152.png);
