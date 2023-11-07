@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comfortaa", sans-serif;
+
+  background-color: #203e32;
+  color: #fffffd;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 1rem 3rem;
+  background-color: #2f363e;
+  width: 50%;
+  border-radius: 20px;
+  height: 70%;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.642),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+
+  /* box-shadow: rgba(181, 212, 226, 0.12) 0px 2px 4px 0px, rgba(188, 209, 219, 0.32) 0px 2px 16px 0px; */
+}
+h1 {
+  text-align: center;
+}
+.inputSpace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  background-color: #fffffd;
+  width: 70%;
+  border-radius: 20px;
+  height: 30px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.inputArea {
+    background-color: transparent;
+  border: none;
+  outline: none;
+  width: 80%;
+  height: 30px;
+}
+#addBtn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: 25px;
+  width: 25px;
+  background-color: #196a4a;
+  border-radius: 50%;
+}
+#addBtn i {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: white;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.list li {
+  background-color: #e47349;
+  list-style-type: none;
+  padding: 10px;
+  padding-left: 10%;
+  padding-right: 20%;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis; cursor:pointer;
+}
+.list li button {
+  content: "";
+  background-image: url(./images/waste-bin_8229265.png);
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  margin-left:5%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  cursor: pointer;
+}
+.list li::before {
+  content: "";
+  background-image: url(./images/circle_105152.png);
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top: 3px;
+}
+.list li.checked {
+  text-decoration: line-through;
+  background-color: #a60c60;
+}
+
+.list li.checked::before {
+  content: "";
+  background-image: url(./images/check-mark_1442912.png);
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 70%;
+  }
+  .inputSpace {
+    width: 90%;
+    border-right: 1rem;
+    padding-left: 0.5rem;
+  }
+  .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list li {
+    padding-left: 25%;
+    font-size: 8px;
+  }
+  .list li::before {
+    top: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  .list li.checked::before {
+    top: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  .list li button {
+    top: 5px;
+    height: 20px;
+    width: 20px;
+  }
+}
