@@ -71,7 +71,6 @@
 // }
 // getResult();
 
-
 const addButton = document.querySelector("#addBtn");
 const input = document.querySelector(".inputArea");
 const list = document.querySelector(".list");
@@ -97,6 +96,7 @@ addButton.addEventListener("click", (e) => {
         text: "You entered this value before,Please enter a new Value",
         icon: "error",
       });
+      input.value = "";
     }
   } else {
     Swal.fire({
@@ -113,6 +113,11 @@ list.addEventListener("click", (e) => {
     getResult();
     addLocal();
   } else if ((e.target.className = "btn")) {
+    const index = listArray.indexOf(e.target.parentElement.textContent.trim());
+    if (index > -1) {
+      listArray.splice(index, 1);
+    }
+
     e.target.parentElement.remove();
     addLocal();
     getResult();
